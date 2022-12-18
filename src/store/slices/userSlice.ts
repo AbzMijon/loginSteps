@@ -2,33 +2,31 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type User = {
     isLogged: boolean,
-    id: number | string,
+    id: number | string | null,
     username: string,
-    password: string,
-    surname: string,
-    sex: number | string | null,
-    age: number | string | null,
-    description: string
 }
 
 const initialState: User = {
     isLogged: false,
     id: Math.round(Math.random() * 1000),
     username: '',
-    password: '',
-    surname: '',
-    sex:  null,
-    age:  null,
-    description: '',
 }
 
 const UserSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        
+        userLoggedIn(state, action) {
+            state.isLogged = true;
+            state.username = action.payload;
+        },
+        userLogOut(state, action) {
+            state.isLogged = false;
+            state.id = null;
+            state.username = '';
+        }
     },
 })
 
-export const {} = UserSlice.actions;
+export const {userLoggedIn, userLogOut} = UserSlice.actions;
 export default UserSlice.reducer;
