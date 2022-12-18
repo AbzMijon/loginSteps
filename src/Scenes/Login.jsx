@@ -114,7 +114,7 @@ function Login() {
         username: '',
         password: '',
         email: '',
-        sex: '',
+        gender: '',
         age: 0,
         status: '',
     }
@@ -153,8 +153,8 @@ function Login() {
                                     <div className="login__form">
                                         <LoginFormikInput name='email' type='email' placeholder='vasiliyPupkin@gmail.com' className='login__input login__email' />
                                         <div className="login__gender">
-                                            <LoginFormikInput name='sex' type='radio' value='men' className='login__input login__sex' />
-                                            <LoginFormikInput name='sex' type='radio' value='women' className='login__input login__sex' />
+                                            <LoginFormikInput name='gender' type='radio' value='men' className='login__input login__sex' />
+                                            <LoginFormikInput name='gender' type='radio' value='women' className='login__input login__sex' />
                                         </div>
                                         <div className="login__navigation">
                                             <button type='button' className='login__prev' onClick={setPrevStep}><GrFormPrevious /> Prev</button>
